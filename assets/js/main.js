@@ -26,22 +26,23 @@ let output = document.querySelector("#output");
 button.addEventListener("click", auslesen);
 
 
-console.log(input)
+//console.log(input)
 
 function auslesen() {
     let valueI = Number(input.value);
-    console.log(words.length);    // 12 
+    // console.log(words.length);    // 12 
     for (let rundenIndex = 0; rundenIndex < words.length; rundenIndex = rundenIndex + 1) // macht 12 runden    
     {
-        console.log(words.length)  // 12
+        //console.log(words.length)  // 12
         let vergleichsWort = words[rundenIndex];
         //    console.log(vergleichsWort);      // hallo Auto Waschmaschine Schrank Katze Beispiel Eltern Fenster Geb
         //    console.log(vergleichsWort.length);  // 5   4      13           7       5
-        console.log(valueI)
+        // console.log(valueI)
 
         if (valueI === vergleichsWort.length) {
-            console.log(vergleichsWort);
-            output.innerHTML += vergleichsWort;   // !!! wieso wird hallo nicht ausgegeben??? 
+            //console.log(vergleichsWort);
+            output.innerHTML += vergleichsWort + " ";   // !!! wieso wird hallo nicht ausgegeben??? 
+            console.log(vergleichsWort); // !!! wies
         }
     }
 
