@@ -28,7 +28,9 @@ button.addEventListener("click", auslesen);
 
 //console.log(input)
 
-function auslesen() {
+function auslesen(event) {
+    event.preventDefault();
+    
     let valueI = Number(input.value);
     // console.log(words.length);    // 12 
     for (let rundenIndex = 0; rundenIndex < words.length; rundenIndex = rundenIndex + 1) // macht 12 runden    
@@ -41,13 +43,28 @@ function auslesen() {
 
         if (valueI === vergleichsWort.length) {
             //console.log(vergleichsWort);
-            output.innerHTML += vergleichsWort + " ";   // !!! wieso wird hallo nicht ausgegeben??? 
-            console.log(vergleichsWort); // !!! wies
+            output.innerHTML += vergleichsWort + " ";
+            // console.log(vergleichsWort); 
         }
     }
+    output.innerHTML += "<br>";   // damit nach komplette ausgabe in neuen Zeile 
+
 
 
 }
 
-//auslesen();
+let button_input = document.querySelector("#button_input");
 
+button_input.addEventListener("click", (event) => {
+event.preventDefault()
+
+let valueString = String(input.value)
+console.log(valueString);
+console.log(words);
+console.log(words.length);
+words.push(valueString);
+console.log(words);
+console.log(words.length);
+
+}
+)
